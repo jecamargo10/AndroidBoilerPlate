@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<mobileBackends>
+
+    <!--Here are the settings for a single mobileBackend.
+    For those apps with multiple mobileBackends, you might need to add
+    settings one by one below-->
+
+    <mobileBackend>
+        <!--Add the name and version of your mobileBackend as values here-->
+        <mbeName>YOUR_MOBILE_BACKEND_NAME</mbeName>
+        <mbeVersion>1.0</mbeVersion>
+
+        <!--Set to true if the current mobileBackend is the default one-->
+        <default>true</default>
+
+        <!--Add the appID here-->
+        <appKey>YOUR_APPLICATION_KEY</appKey>
+
+        <!--The base URL goes here-->
+        <baseUrl>YOUR_BASE_URL</baseUrl>
+
+        <!--connection timeout value in seconds, if it is not set default will be 60 secs-->
+        <networkConnectionTimeout>CONNECTION_TIMEOUT</networkConnectionTimeout>
+
+        <!--Set it true if you want to get analytics information from UI-->
+        <enableAnalytics>true</enableAnalytics>
+
+        <!--Set it true if you want to get location information along with analytics from UI-->
+        <enableAnalyticsLocation>true</enableAnalyticsLocation>
+
+        <!--Set it true if you want to get logging information in Logger-->
+        <enableLogger>true</enableLogger>
+
+        <!--Set it true if you want to log requests and response -->
+        <logHTTP>true</logHTTP>
+
+        <!--Add the OAuth Service and secret here -->
+        <!--To get the oAuthClientId and oAuthClientSecret, you may go to MCS UI-> Development->
+        MobileBackend->Settings -->
+        <authorization>
+            <!-- Set this to true/false to enabled/disable offline login-->
+            <offlineAuthenticationEnabled>true</offlineAuthenticationEnabled>
+
+            <!-- authenticationType goes here set it to basic or oauth-->
+            <authenticationType>oauth</authenticationType>
+
+            <!-- set these when authenticationType above is basic-->
+            <basic>
+                <mobileBackendID>YOUR_MOBILE_BACKEND_ID</mobileBackendID>
+                <anonymousKey>YOUR_ANONYMOUS_KEY</anonymousKey>
+            </basic>
+
+            <!-- set these when authenticationType above is oauth-->
+            <oauth>
+                <oAuthTokenEndPoint>YOUR_OAUTH_TOKEN_END_POINT</oAuthTokenEndPoint>
+                <oAuthClientId>YOUR_OAUTH_CLIENT_ID</oAuthClientId>
+                <oAuthClientSecret>YOUR_OAUTH_CLIENT_SECRET</oAuthClientSecret>
+            </oauth>
+        </authorization>
+    </mobileBackend>
+
+</mobileBackends>

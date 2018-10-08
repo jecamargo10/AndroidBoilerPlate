@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<config>
+
+    <!-- set this when authenticationType below is oauth-->
+    <oAuthTokenEndPoint>YOUR_OAUTH_TOKEN_END_POINT</oAuthTokenEndPoint>
+
+    <!--Set it true if you want to get logging information in Logger-->
+    <enableLogger>true</enableLogger>
+
+    <!--Here are the settings for a single mobileBackend-->
+
+    <mobileBackend>
+
+        <!--Add the name of your mobileBackend as value here-->
+        <name>YOUR_MOBILE_BACKEND_NAME</name>
+
+        <!--The base URL goes here-->
+        <baseUrl>YOUR_BASE_URL</baseUrl>
+
+        <!--Set it true if you want to get analytics information from UI-->
+        <enableAnalytics>true</enableAnalytics>
+
+        <!--Set it true if you want to get location information along with analytics from UI-->
+        <enableAnalyticsLocation>true</enableAnalyticsLocation>
+
+        <!--Set it true if you want to enable Offline Analytics-->
+        <enableOfflineAnalytics>true</enableOfflineAnalytics>
+
+        <!--connection timeout value in seconds-->
+        <networkConnectionTimeout>CONNECTION_TIMEOUT</networkConnectionTimeout>
+
+        <!--Add the OAuth Service and secret here -->
+        <!--To get the oAuthClientId and oAuthClientSecret, you may go to MCS UI-> Development->
+        MobileBackend->Settings -->
+        <authentication>
+
+            <!-- authenticationType goes here set it to basic or oauth-->
+            <type>oauth</type>
+
+            <!-- set these when authenticationType above is basic-->
+            <basic>
+                <mobileBackendId>YOUR_MOBILE_BACKEND_ID</mobileBackendId>
+                <anonymousKey>YOUR_ANONYMOUS_KEY</anonymousKey>
+
+                <!-- Set this to true/false to enabled/disable offline login-->
+                <enableOffline>true</enableOffline>
+            </basic>
+
+            <!-- set these when authenticationType above is oauth-->
+            <oauth>
+                <clientId>YOUR_OAUTH_CLIENT_ID</clientId>
+                <clientSecret>YOUR_OAUTH_CLIENT_SECRET</clientSecret>
+
+                <!-- Set this to true/false to enable/disable offline login-->
+                <enableOffline>true</enableOffline>
+            </oauth>
+
+            <!-- set these when authenticationType above is facebook-->
+            <facebook>
+                <basic>
+                    <mobileBackendId>YOUR_MOBILE_BACKEND_ID</mobileBackendId>
+                    <anonymousKey>YOUR_ANONYMOUS_KEY</anonymousKey>
+                </basic>
+                <appId>APP_ID</appId>
+                <scopes>SCOPES_IN_COMMA_SEPARATED_VALUES</scopes>
+            </facebook>
+
+            <!-- set these when authenticationType above is tokenExchange-->
+            <tokenExchange>
+                <oauth>
+                    <clientId>YOUR_OAUTH_CLIENT_ID</clientId>
+                    <clientSecret>YOUR_OAUTH_CLIENT_SECRET</clientSecret>
+                </oauth>
+                <basic>
+                    <!--<identityDomain>yoda</identityDomain>			&lt;!&ndash; Undocumented Property for internal use  &ndash;&gt;-->
+                    <mobileBackendId>YOUR_MOBILE_BACKEND_ID</mobileBackendId>
+                    <anonymousKey>YOUR_ANONYMOUS_KEY</anonymousKey>
+                </basic>
+            </tokenExchange>
+
+        </authentication>
+
+    </mobileBackend>
+
+</config>
